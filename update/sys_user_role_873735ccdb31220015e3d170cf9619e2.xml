@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_71857_lunchnow_restaurant_user</name>
+        <suffix/>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-09-06 18:22:22</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>873735ccdb31220015e3d170cf9619e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_71857_lunchnow_restaurant_user</sys_name>
+        <sys_package display_value="LunchNow" source="x_71857_lunchnow">185635ccdb31220015e3d170cf96199d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="LunchNow">185635ccdb31220015e3d170cf96199d</sys_scope>
+        <sys_update_name>sys_user_role_873735ccdb31220015e3d170cf9619e2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-09-06 18:22:22</sys_updated_on>
+    </sys_user_role>
+</record_update>

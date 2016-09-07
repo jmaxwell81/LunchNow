@@ -6,8 +6,8 @@
         <js_level>helsinki_es5</js_level>
         <licensable>true</licensable>
         <logo/>
-        <menu/>
-        <name>lunchnow</name>
+        <menu display_value="LunchNow">ab3735ccdb31220015e3d170cf9619e4</menu>
+        <name>LunchNow</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
@@ -22,9 +22,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-09-06 18:18:21</sys_created_on>
         <sys_id>185635ccdb31220015e3d170cf96199d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-09-06 18:18:21</sys_updated_on>
+        <sys_updated_on>2016-09-07 08:55:57</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <user_role/>
