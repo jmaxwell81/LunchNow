@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Dish" max_length="40" name="x_71857_lunchnow_dish" type="collection">
+        <element label="Daily menu id" max_length="40" name="daily_menu_id" reference="x_71857_lunchnow_daily_menu" type="reference"/>
+        <element label="Dish id" max_length="40" name="dish_id" type="string"/>
+        <element label="Name" max_length="400" name="name" type="string"/>
+        <element label="Price" max_length="40" name="price" type="decimal"/>
+    </element>
+</database>

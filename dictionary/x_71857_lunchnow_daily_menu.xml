@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Daily menu" max_length="40" name="x_71857_lunchnow_daily_menu" type="collection">
+        <element display="true" label="Daily menu id" max_length="40" name="daily_menu_id" type="string"/>
+        <element label="Date" max_length="40" name="date" type="glide_date"/>
+        <element label="From" max_length="40" name="from" type="glide_date_time"/>
+        <element label="Restaurant" max_length="32" name="restaurant" reference="x_71857_lunchnow_restaurant" type="reference"/>
+        <element label="To" max_length="40" name="to" type="glide_date_time"/>
+        <index name="index">
+            <element name="restaurant"/>
+        </index>
+    </element>
+</database>

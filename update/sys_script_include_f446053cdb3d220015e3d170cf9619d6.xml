@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_71857_lunchnow.LunchNow</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>LunchNow</name>
+        <script><![CDATA[var LunchNow = Class.create();
+LunchNow.prototype = {
+	initialize: function() {
+		gs.info('just flippin');
+	},
+	
+	updateRestaurant: function(restaurant) {
+		gs.info(restaurant.name);
+		restaurant.phone = '123494994';
+		restaurant.update();
+		gs.info('just updatin');
+	},
+	
+	printNames: function() {
+		var res = new GlideRecord('x_71857_lunchnow_restaurant');
+		res.query();
+		while (res.next()) {
+			gs.info(res.getValue('zomato_id'));
+			gs.info(res.getValue('name'));
+			
+			
+		}
+	},
+	
+	type: 'LunchNow'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-09-08 22:44:25</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>f446053cdb3d220015e3d170cf9619d6</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>LunchNow</sys_name>
+        <sys_package display_value="LunchNow" source="x_71857_lunchnow">185635ccdb31220015e3d170cf96199d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="LunchNow">185635ccdb31220015e3d170cf96199d</sys_scope>
+        <sys_update_name>sys_script_include_f446053cdb3d220015e3d170cf9619d6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-09-08 23:17:19</sys_updated_on>
+    </sys_script_include>
+</record_update>

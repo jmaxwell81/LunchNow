@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="to" label="To" language="en" table="x_71857_lunchnow_daily_menu">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>to</element>
+            <help/>
+            <hint/>
+            <label>To</label>
+            <language>en</language>
+            <name>x_71857_lunchnow_daily_menu</name>
+            <plural>Tos</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-09-08 14:19:11</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>e8c25ba8dbb9220015e3d170cf9619da</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>To</sys_name>
+            <sys_package display_value="LunchNow" source="x_71857_lunchnow">185635ccdb31220015e3d170cf96199d</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="LunchNow">185635ccdb31220015e3d170cf96199d</sys_scope>
+            <sys_update_name>sys_documentation_x_71857_lunchnow_daily_menu_to_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-08 14:19:11</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
