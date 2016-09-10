@@ -8,40 +8,40 @@
         <empty_condition/>
         <filter_condition/>
         <filter_roles/>
-        <hierarchical_lists>true</hierarchical_lists>
+        <hierarchical_lists>false</hierarchical_lists>
         <label/>
         <link_condition/>
         <link_roles/>
         <list_edit_insert_row>false</list_edit_insert_row>
         <list_edit_ref_qual_tag/>
         <list_edit_type/>
-        <name>x_71857_lunchnow_restaurant</name>
+        <name>x_71857_lunchnow_daily_menu</name>
         <new_condition/>
         <new_roles/>
         <omit_columns_if_empty>false</omit_columns_if_empty>
         <omit_drilldown_link>true</omit_drilldown_link>
         <omit_edit_button>true</omit_edit_button>
         <omit_filters>true</omit_filters>
-        <omit_if_empty>true</omit_if_empty>
+        <omit_if_empty>false</omit_if_empty>
         <omit_links>true</omit_links>
         <omit_new_button>true</omit_new_button>
-        <related_list>x_71857_lunchnow_daily_menu.restaurant</related_list>
+        <related_list>x_71857_lunchnow_dish.daily_menu_id</related_list>
         <sys_class_name>sys_ui_list_control</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2016-09-08 15:13:52</sys_created_on>
+        <sys_created_on>2016-09-10 10:52:02</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>b12fd7acdbb9220015e3d170cf961974</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>x_71857_lunchnow_restaurant</sys_name>
+        <sys_id>71667c15db31220015e3d170cf9619f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_71857_lunchnow_daily_menu</sys_name>
         <sys_overrides display_value="">global</sys_overrides>
         <sys_package display_value="LunchNow" source="x_71857_lunchnow">185635ccdb31220015e3d170cf96199d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="LunchNow">185635ccdb31220015e3d170cf96199d</sys_scope>
-        <sys_update_name>sys_ui_list_control_b12fd7acdbb9220015e3d170cf961974</sys_update_name>
+        <sys_update_name>sys_ui_list_control_71667c15db31220015e3d170cf9619f4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-09-10 10:53:03</sys_updated_on>
+        <sys_updated_on>2016-09-10 10:52:02</sys_updated_on>
     </sys_ui_list_control>
 </record_update>

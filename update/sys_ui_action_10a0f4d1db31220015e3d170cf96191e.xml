@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>Restaurant - Get current menu</action_name>
+        <active>true</active>
+        <client>false</client>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_context_menu>true</form_context_menu>
+        <form_link>false</form_link>
+        <hint/>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <name>Get current menu</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	var date_now = new GlideDateTime();
+	
+	
+	var current_menu = new GlideRecord('x_71857_lunchnow_daily_menu');
+	current_menu.addQuery('from', '<=', date_now);
+	current_menu.addQuery('to','>=', date_now);
+	current_menu.addQuery('restaurant',current.sys_id);
+	current_menu.query();
+	
+	if (current_menu.hasNext()) {
+		gs.addInfoMessage('Dear User, current menu is already present, choose your meal.');
+	} else
+	{
+		
+		
+		try {
+			
+			var r1 = new sn_ws.RESTMessageV2('x_71857_lunchnow.Zomato Daily menu', 'get');
+			r1.setStringParameter('u_res_id', current.zomato_id);
+			
+			var response1 = r1.execute();
+			
+			if (response1.getStatusCode() == 200) {
+				
+				var parsed1 = new global.JSON().decode(response1.getBody());
+				
+				var menus = parsed1.daily_menus;
+				
+				if (menus.length > 0 ) {
+					var i;
+					for (i in menus) {
+						var m = menus[i];
+						var dailymenu = new GlideRecord('x_71857_lunchnow_daily_menu');
+						dailymenu.initialize();
+						dailymenu.restaurant= current.sys_id;
+						dailymenu.daily_menu_id = String(m.daily_menu.daily_menu_id);
+						if (m.daily_menu.start_date) {dailymenu.from = new GlideDateTime(m.daily_menu.start_date);} else {dailymenu.to = new GlideDateTime().toString().split(' ')[0] + ' 00:00:00';} 
+						if (m.daily_menu.end_date) {dailymenu.to = new GlideDateTime(m.daily_menu.end_date);} else {dailymenu.to = new GlideDateTime().toString().split(' ')[0] + ' 23:59:59';} 
+						var menu_id = dailymenu.insert();
+						
+						var j;
+						var dishes = parsed1.daily_menus[0].daily_menu.dishes;
+						if (menu_id) {
+							for (j in dishes) {
+								var d = dishes[j];
+								if (d.dish.price != '') {
+									var dish = new GlideRecord('x_71857_lunchnow_dish');
+									dish.initialize();
+									dish.daily_menu_id = menu_id;
+									dish.dish_id = String(d.dish.dish_id);
+									dish.name = d.dish.name;
+									dish.price = Number(d.dish.price.replace('\u00a0',' ').split(' ')[0]);
+									dish.insert();
+								}
+							}
+						}
+					}
+				}
+				else {
+					gs.addErrorMessage('Dear User, restaurant did not publish current daily menu yet. Try again later.');
+				}
+				
+			} else {
+				gs.addErrorMessage('Dear User, we are facing connection problems. Please try again later.');
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+		}
+	}
+	action.setRedirectURL(current);
+})(current, previous);]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-09-10 10:46:59</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>10a0f4d1db31220015e3d170cf96191e</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>Get current menu</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LunchNow" source="x_71857_lunchnow">185635ccdb31220015e3d170cf96199d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="LunchNow">185635ccdb31220015e3d170cf96199d</sys_scope>
+        <sys_update_name>sys_ui_action_10a0f4d1db31220015e3d170cf96191e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-09-10 12:57:19</sys_updated_on>
+        <table>x_71857_lunchnow_restaurant</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
